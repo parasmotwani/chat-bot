@@ -3,7 +3,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import google.generativeai as gen_ai
 from datetime import datetime
-import time  # For the typing indicator
+import time # For the typing indicator
 
 # Load environment variables
 load_dotenv()
@@ -71,16 +71,14 @@ st.markdown("""
 st.title("🤖 Personal Chatbot")
 
 # Chat session selector
-# Chat session selector with proper alignment
-# Chat session selector with aligned dropdown and button
 col1, col2 = st.columns([4, 1])  # Adjust width ratio as needed
 
 with col1:
-    st.markdown("#### 💬 Select Chat")  # Proper title alignment
+    st.markdown("#### 💬 Select Chat") 
     selected_chat = st.selectbox("", st.session_state.chat_ids, index=st.session_state.chat_ids.index(st.session_state.active_chat), label_visibility="collapsed")
 
 with col2:
-    st.markdown("<div style='margin-top: 10px;'></div>", unsafe_allow_html=True)  # Adjust vertical alignment
+    st.markdown("<div style='margin-top: 10px;'></div>", unsafe_allow_html=True) 
     if st.button("➕ New Chat"):
         new_chat_id = f"Chat {len(st.session_state.chat_ids) + 1}"
         st.session_state.chat_ids.append(new_chat_id)
